@@ -4,6 +4,7 @@ import { CentroMedicoListComponent } from './pages/centroMedico/centro-medico-li
 import { HomeComponent } from './pages/home/home.component';
 import { PacienteListComponent } from './pages/pacientes/paciente-list/paciente-list.component';
 import { EspecialidadListComponent } from './pages/especialidad/especialidad-list/especialidad-list.component';
+import { MedicamentoComponent } from './pages/medicamentos/medicamento/medicamento.component';
 
 
 export const routes: Routes = [
@@ -27,6 +28,10 @@ export const routes: Routes = [
   {
       path: 'especialidades',
       component: EspecialidadListComponent
+  },
+  {
+    path:'medicamentos',
+    component:MedicamentoComponent
   }
 
 ];
