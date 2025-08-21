@@ -1,0 +1,60 @@
+<div class="container mx-auto p-6">
+  <!-- Título -->
+  <h1 class="font-bold text-3xl text-gray-800 mb-6 text-center">
+    Médicos
+  </h1>
+
+  <!-- Botón Crear -->
+  <div class="flex justify-center mb-6">
+    <a
+      routerLink="/centroMedico/create"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
+    >
+      + Crear Médico
+    </a>
+  </div>
+
+  <!-- Grid de Centros Médicos -->
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for(medico of medico; track medico.medicoId){
+    <li
+      class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+    >
+
+      <!-- Contenido -->
+      <div class="p-5">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">
+          {{ medico.nombre }}
+        </h2>
+
+        <p class="text-sm text-gray-600 mb-1">
+          <span class="font-semibold">Matricula:</span>
+          {{ medico.Matricula }}
+        </p>
+        <p class="text-sm text-gray-600 mb-1">
+          <span class="font-semibold">Numero Telefonico:</span>
+          {{ medico.Telefono }}
+        </p>
+        <p class="text-sm text-gray-600 mb-1">
+          <span class="font-semibold">Email:</span>
+          {{ medico.Email }}
+        </p>
+        <!-- Acciones -->
+        <div class="flex justify-end space-x-2">
+          <a
+            routerLink="/centroMedico/edit/{{ medico.medicoId }}"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md text-sm shadow"
+          >
+            Editar
+          </a>
+          <button
+            class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm shadow"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </li>
+    }
+  </ul>
+</div>
