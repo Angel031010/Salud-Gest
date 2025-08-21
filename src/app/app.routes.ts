@@ -4,6 +4,7 @@ import { CentroMedicoListComponent } from './pages/centroMedico/centro-medico-li
 import { HomeComponent } from './pages/home/home.component';
 import { PacienteListComponent } from './pages/pacientes/paciente-list/paciente-list.component';
 import { EspecialidadListComponent } from './pages/especialidad/especialidad-list/especialidad-list.component';
+import { MedicamentoComponent } from './pages/medicamentos/medicamento/medicamento.component';
 import { ContactoPacienteListComponent } from './pages/contactoPaciente/contacto-paciente-list/contacto-paciente-list.component';
 import { CitaListComponent } from './pages/cita/cita-list/cita-list.component';
 import { CitaCreateComponent } from './pages/cita/cita-create/cita-create.component';
@@ -30,6 +31,10 @@ export const routes: Routes = [
     {
         path: 'especialidades',
         component: EspecialidadListComponent
+  },
+  {
+    path:'medicamentos',
+    component:MedicamentoComponent
     },
     {
         path: 'contactoPaciente',

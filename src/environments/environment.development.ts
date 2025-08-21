@@ -5,8 +5,7 @@ export const environment = {
         citas: 'https://localhost:4300/api/v1/citas',
         pacientes: 'https://localhost:4300/api/v1/pacientes',
         especialidades: 'https://localhost:4300/api/v1/especialidades',
-        inventarios: 'https://localhost:4300/api/v1/inventario',
-        medicos: 'https://localhost:4300/api/v1/medicos'
+        
 
     }
 };
