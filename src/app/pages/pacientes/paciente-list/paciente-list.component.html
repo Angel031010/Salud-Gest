@@ -1,0 +1,64 @@
+<div class="container mx-auto p-6">
+  <!-- Título -->
+  <h1 class="font-bold text-3xl text-gray-800 mb-6 text-center">
+    Pacientes
+  </h1>
+
+  <!-- Botón Crear -->
+  <div class="flex justify-center mb-6">
+    <a
+      routerLink="/paciente/create"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
+    >
+      + Crear Paciente
+    </a>
+  </div>
+
+  <!-- Grid de Pacientes -->
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for(paciente of pacientes; track paciente.pacienteId){
+    <li
+      class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+    >
+      <!-- Imagen -->
+      <img
+        [src]="'https://localhost:7233' + paciente.urlFoto"
+        alt="{{ paciente.nombre }} {{ paciente.apPaterno }}"
+        class="w-full h-48 object-cover"
+      />
+
+      <!-- Contenido -->
+      <div class="p-5">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">
+          {{ paciente.nombre }} {{ paciente.apPaterno }} {{ paciente.apMaterno }}
+        </h2>
+
+        <p><span class="font-semibold">Fecha de Nacimiento:</span> {{ paciente.fechaNacimiento }}</p>
+        <p class="text-sm text-gray-600 mb-1">
+          <span class="font-semibold">Tel:</span>
+          {{ paciente.telefono }}
+        </p>
+        <p class="text-sm text-gray-600 mb-3">
+          <span class="font-semibold">Email:</span>
+          {{ paciente.email }}
+        </p>
+
+        <!-- Acciones -->
+        <div class="flex justify-end space-x-2">
+          <a
+            routerLink="/paciente/edit/{{ paciente.pacienteId }}"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md text-sm shadow"
+          >
+            Editar
+          </a>
+          <button
+            class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm shadow"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </li>
+    }
+  </ul>
+</div>

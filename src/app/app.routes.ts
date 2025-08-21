@@ -1,3 +1,27 @@
 import { Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { CentroMedicoListComponent } from './pages/centroMedico/centro-medico-list/centro-medico-list.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PacienteListComponent } from './pages/pacientes/paciente-list/paciente-list.component';
 
-export const routes: Routes = [];
+
+export const routes: Routes = [
+  {
+      path: '',
+      redirectTo: '/home',
+      pathMatch: 'full'
+  },
+  {
+      path: 'home',
+      component: HomeComponent
+  },
+  {
+      path: 'centro-medico', 
+      component: CentroMedicoListComponent
+  },
+  {
+      path: 'paciente',
+      component: PacienteListComponent
+  }
+
+];
