@@ -1,24 +1,24 @@
 export interface medicoReadDTO{
     medicoId: number;
     nombre: string;
-    ApPaterno: string;
-    ApMaterno: string;
-    Matricula: string;
-    Telefono: string;
-    Email: string;
-    EspecialidadId:number;
-    CentroMedicoId:number;
+    apPaterno: string;
+    apMaterno: string;
+    matricula: string;
+    telefono: string;
+    email: string;
+    especialidadId:number;
+    centroMedicoId:number;
 }
 
 export interface medicoCreateDTO{
     nombre: string;
-    ApPaterno: string;
-    ApMaterno: string;
-    Matricula: string;
-    Telefono: string;
-    Email: string;
-    EspecialidadId:number;
-    CentroMedicoId:number;
+    apPaterno: string;
+    apMaterno: string;
+    matricula: string;
+    telefono: string;
+    email: string;
+    especialidadId:number;
+    centroMedicoId:number;
 }
 
 
