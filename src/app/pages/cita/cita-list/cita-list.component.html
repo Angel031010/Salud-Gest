@@ -1,0 +1,72 @@
+<div class="container mx-auto p-6">
+  <!-- Título -->
+  <h1 class="font-bold text-3xl text-gray-800 mb-6 text-center">
+    Agenda de Citas Médicas
+  </h1>
+
+  <!-- Botón Crear -->
+  <div class="flex justify-center mb-6">
+    <a
+      routerLink="/citas/create"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
+    >
+      + Nueva Cita
+    </a>
+  </div>
+
+  <!-- Lista de citas -->
+  <div class="space-y-6">
+    @for (cita of citas; track cita.citaId) {
+      <div
+        class="bg-white border-l-4 border-blue-500 rounded-lg shadow p-5 hover:shadow-lg transition duration-300"
+      >
+        <!-- Encabezado -->
+        <div class="flex justify-between items-center mb-3">
+          <h2 class="text-xl font-semibold text-gray-800">
+            {{ cita.pacienteNombre }} {{ cita.apellidoPaternoPaciente }}
+            {{ cita.apellidoMaternoPaciente }}
+          </h2>
+          <span
+            class="text-sm font-medium bg-blue-100 text-blue-700 px-3 py-1 rounded-full"
+          >
+            {{ cita.fechaHora | date : "dd/MM/yyyy HH:mm" }}
+          </span>
+        </div>
+
+        <!-- Detalles -->
+        <p class="text-gray-600 text-sm">
+          <span class="font-semibold">Médico:</span>
+          {{ cita.medicoNombre }} {{ cita.apellidoPaternoMedico }}
+          {{ cita.apellidoMaternoMedico }}
+        </p>
+        <p class="text-gray-600 text-sm">
+          <span class="font-semibold">Centro Médico:</span>
+          {{ cita.centroMedicoNombre }}
+        </p>
+        <p class="text-gray-600 text-sm">
+          <span class="font-semibold">Duración:</span>
+          {{ cita.duracionMinutos }} minutos
+        </p>
+        <p class="text-gray-700 mt-2">
+          <span class="font-semibold">Motivo:</span>
+          {{ cita.motivo }}
+        </p>
+
+        <!-- Acciones -->
+        <div class="flex justify-end space-x-3 mt-4">
+          <a
+            routerLink="/cita/edit/{{ cita.citaId }}"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1.5 rounded-md text-sm shadow"
+          >
+            Editar
+          </a>
+          <button
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-1.5 rounded-md text-sm shadow"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
