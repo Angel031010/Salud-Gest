@@ -8,6 +8,8 @@ import { MedicamentoComponent } from './pages/medicamentos/medicamento/medicamen
 import { ContactoPacienteListComponent } from './pages/contactoPaciente/contacto-paciente-list/contacto-paciente-list.component';
 import { CitaListComponent } from './pages/cita/cita-list/cita-list.component';
 import { CitaCreateComponent } from './pages/cita/cita-create/cita-create.component';
+import { MedicoListComponent } from './pages/medico/medico-list/medico-list.component';
+import { ProveedorMedicamentoListComponent } from './pages/proveedor-medicamento/proveedor-medicamento-list/proveedor-medicamento-list.component';
 
 
 export const routes: Routes = [
@@ -47,6 +49,14 @@ export const routes: Routes = [
     {
         path: 'citas/create',
         component : CitaCreateComponent
+    },
+    {
+        path : 'medicos',
+        component : MedicoListComponent
+    },
+     {
+        path : 'proveedor-medicamentos',
+        component : ProveedorMedicamentoListComponent
     }
 
 ];

@@ -9,7 +9,5 @@ export const environment = {
         medico:'https://localhost:4300/medico',
         pacientes: 'https://localhost:4300/api/v1/pacientes',
         proveedorMedicamento: 'https://localhost:4300/api/v1/provedorMedicamento',
-
-
     }
 };
