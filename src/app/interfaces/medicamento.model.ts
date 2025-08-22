@@ -1,5 +1,5 @@
 export interface MedicamentoDTO{
-MedicamentoId:number,
+medicamentoId:number,
 nombre:string,
 sustancia:string,
 lote:string,
