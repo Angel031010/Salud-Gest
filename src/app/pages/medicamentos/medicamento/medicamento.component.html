@@ -7,7 +7,7 @@
   <!-- Botón Crear -->
   <div class="flex justify-center mb-6">
     <a
-      routerLink="/centroMedico/create"
+      routerLink="/medicamentos/create"
       class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
     >
       + Agregar Medicamento
@@ -16,7 +16,7 @@
 
   <!-- Grid de Centros Médicos -->
   <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    @for(medicamento of medicamentos; track medicamento.MedicamentoId){
+    @for(medicamento of medicamentos; track medicamento.medicamentoId){
     <li
       class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
     >
@@ -44,12 +44,13 @@
         <!-- Acciones -->
         <div class="flex justify-end space-x-2">
           <a
-            routerLink="/centroMedico/edit/{{ medicamento.MedicamentoId }}"
+            routerLink="/medicamento/edit/{{ medicamento.medicamentoId }}"
             class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md text-sm shadow"
           >
             Editar
           </a>
           <button
+          routerLink="/medicamento/delete/{{medicamento.medicamentoId}}"
             class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm shadow"
           >
             Eliminar

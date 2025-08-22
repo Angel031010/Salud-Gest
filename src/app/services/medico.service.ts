@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { medicoReadDTO } from '../interfaces/medico.model';
+import { MedicoReadDTO } from '../interfaces/medico.model';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,7 +11,7 @@ export class MedicoService {
 
   constructor(private http : HttpClient) { }
 
-  public obtenerMedicos() : Observable <medicoReadDTO[]>{
-    return this.http.get<medicoReadDTO[]>(environment.api.medico)
+  public obtenerMedicos() : Observable <MedicoReadDTO[]>{
+    return this.http.get<MedicoReadDTO[]>(environment.api.medico)
   }
 }

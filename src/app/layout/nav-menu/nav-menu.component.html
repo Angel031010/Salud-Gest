@@ -50,10 +50,10 @@
                 Recetas
             </a>
         </li>
-        <li>
-            <a routerLink="/medicamentos" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-                Medicamentos
-            </a>
-        </li>
+        <select (change)="navigateTo($event)" class="bg-gray-900 text-white px-2 py-1 rounded-md text-xs font-medium hover:bg-gray-700">
+            <option value="" disabled selected>Medicamentos / proveedor</option>
+            <option value="/medicamentos">Medicamentos</option>
+            <option value="/proveedor-medicamentos">Proveedor de Medicamentos</option>
+        </select>
     </ul>
 </nav>

@@ -13,7 +13,7 @@ import { CentroMedicoRead } from '../../../interfaces/centroMedico.model';
 
 @Component({
   selector: 'app-cita-create',
-  imports: [ReactiveFormsModule, CommonModule, RouterModule, RouterLink],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './cita-create.component.html',
   styleUrl: './cita-create.component.css'
 })

@@ -1,4 +1,4 @@
-export interface medicoReadDTO{
+export interface MedicoReadDTO{
     medicoId: number;
     nombre: string;
     apPaterno: string;

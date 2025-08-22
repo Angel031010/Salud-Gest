@@ -7,6 +7,7 @@ export const environment = {
         especialidades: 'https://localhost:4300/api/v1/especialidades',
         inventarios: 'https://localhost:4300/api/v1/inventario',
         medicamentos:"https://localhost:4300/medicamento",
-        medico: "https://localhost:4300/api/v1/medicos"
+        medico: "https://localhost:4300/api/v1/medicos",
+        proveedorMedicamento: 'https://localhost:4300/api/v1/provedorMedicamento',
     }
 };

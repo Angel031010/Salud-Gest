@@ -14,4 +14,20 @@ export class MedicamentoService {
   public obtenerMedicamentos() : Observable<MedicamentoDTO[]>{
     return this.http.get<MedicamentoDTO[]>(environment.api.medicamentos)
   }
+
+  public agregarMedicamento(form:MedicamentoDTO): Observable<MedicamentoDTO>{
+        return this.http.post<MedicamentoDTO>(`${environment.api.medicamentos}`, form);
+      }
+
+  public obtenerMedicamentoById(id:number): Observable<MedicamentoDTO>{
+    return this.http.get<MedicamentoDTO>(`${environment.api.medicamentos}/${id}`);
+      }
+    
+  public updateProduct(id:number,medicamento:MedicamentoDTO):Observable<MedicamentoDTO>{
+    return this.http.put<MedicamentoDTO>(`${environment.api.medicamentos}/${id}`,medicamento);
+  }
+
+  public deleteMedicamento(id:number):Observable<MedicamentoDTO>{
+    return this.http.delete<MedicamentoDTO>(`${environment.api.medicamentos}/${id}`);
+  }
 }

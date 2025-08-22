@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { medicoReadDTO } from '../../../interfaces/medico.model';
+import { MedicoReadDTO } from '../../../interfaces/medico.model';
 import { MedicoService } from '../../../services/medico.service';
 import { RouterLink } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class MedicoListComponent implements OnInit {
 
-  medico : medicoReadDTO[] = [];
+  medico : MedicoReadDTO[] = [];
   
   medicoService = inject(MedicoService)
 

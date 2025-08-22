@@ -18,10 +18,10 @@ export class MedicamentoComponent implements OnInit {
   }
 
   loadData() : void {
-    this.medicamentosService.obtenerMedicamentos().subscribe( data => {
-      this.medicamentos = data;
-      console.log(this.medicamentos);
-    });
+      this.medicamentosService.obtenerMedicamentos().subscribe( data => {
+        this.medicamentos = data;
+        console.log(this.medicamentos);
+      });
   }
 
 }
