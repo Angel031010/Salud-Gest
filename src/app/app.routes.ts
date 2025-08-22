@@ -8,6 +8,17 @@ import { MedicamentoComponent } from './pages/medicamentos/medicamento/medicamen
 import { ContactoPacienteListComponent } from './pages/contactoPaciente/contacto-paciente-list/contacto-paciente-list.component';
 import { CitaListComponent } from './pages/cita/cita-list/cita-list.component';
 import { CitaCreateComponent } from './pages/cita/cita-create/cita-create.component';
+import { MedicoListComponent } from './pages/medico/medico-list/medico-list.component';
+import { ProveedorMedicamentoListComponent } from './pages/proveedor-medicamento/proveedor-medicamento-list/proveedor-medicamento-list.component';
+import { MedicamentoCrearComponent } from './pages/medicamentos/medicamento-crear/medicamento-crear.component';
+import { MedicamentoEditComponent } from './pages/medicamentos/medicamento-edit/medicamento-edit.component';
+import { MedicamentoDeleteComponent } from './pages/medicamentos/medicamento-delete/medicamento-delete.component';
+import { CitaUpdateComponent } from './pages/cita/cita-update/cita-update.component';
+import { CitaDeleteComponent } from './pages/cita/cita-delete/cita-delete.component';
+import { ContactoPacienteCreateComponent } from './pages/contactoPaciente/contacto-paciente-create/contacto-paciente-create.component';
+import { ContactoPacienteUpdateComponent } from './pages/contactoPaciente/contacto-paciente-update/contacto-paciente-update.component';
+import { CentroMedicoCreateComponent } from './pages/centroMedico/centro-medico-create/centro-medico-create.component';
+import { CentroMedicoUpdateComponent } from './pages/centroMedico/centro-medico-update/centro-medico-update.component';
 
 
 export const routes: Routes = [
