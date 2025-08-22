@@ -7,7 +7,7 @@
   <!-- Botón Crear -->
   <div class="flex justify-center mb-6">
     <a
-      routerLink="/centroMedico/create"
+      routerLink="/centro-medico/create"
       class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
     >
       + Crear Centro Médico
@@ -22,7 +22,7 @@
     >
       <!-- Imagen -->
       <img
-        [src]="'https://localhost:7233' + centroMedico.imagenUrl"
+        [src]="'https://localhost:4300' + centroMedico.imagenUrl"
         alt="{{ centroMedico.nombre }}"
         class="w-full h-48 object-cover"
       />
@@ -53,13 +53,14 @@
         <!-- Acciones -->
         <div class="flex justify-end space-x-2">
           <a
-            routerLink="/centroMedico/edit/{{ centroMedico.centroMedicoId }}"
+            routerLink="/centro-medico/edit/{{ centroMedico.centroMedicoId }}"
             class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md text-sm shadow"
           >
             Editar
           </a>
           <button
             class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm shadow"
+            (click)="eliminarCentro(centroMedico.centroMedicoId)"
           >
             Eliminar
           </button>

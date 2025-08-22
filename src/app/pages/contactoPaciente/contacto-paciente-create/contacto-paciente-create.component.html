@@ -1,0 +1,156 @@
+<div class="container mx-auto p-6 max-w-3xl">
+  <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+    Crear Contacto del Paciente
+  </h1>
+
+  <form
+    [formGroup]="contactosForm"
+    (ngSubmit)="enviarFormulario()"
+    class="bg-white shadow-md rounded-lg p-6 space-y-4"
+  >
+    <!-- Paciente -->
+    <div>
+      <label class="block text-gray-700 font-semibold mb-1">Paciente</label>
+      <select
+        formControlName="pacienteId"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <option value="">Selecciona un paciente</option>
+        <option
+          *ngFor="let paciente of pacientes"
+          [value]="paciente.pacienteId"
+        >
+          {{ paciente.nombre }} {{ paciente.apPaterno }} {{ paciente.apMaterno }}
+        </option>
+      </select>
+      <div
+        *ngIf="contactosForm.get('pacienteId')?.touched && contactosForm.get('pacienteId')?.invalid"
+        class="text-red-500 text-sm mt-1"
+      >
+        Selecciona un paciente
+      </div>
+    </div>
+
+    <!-- Tipo de Contacto -->
+    <div>
+      <label class="block text-gray-700 font-semibold mb-1">Tipo de Contacto</label>
+      <select
+        formControlName="tipoContacto"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <option value="">Selecciona un tipo</option>
+        <option [value]="0">Emergencia</option>
+        <option [value]="1">Familiar</option>
+        <option [value]="2">Amigo</option>
+      </select>
+      <div
+        *ngIf="contactosForm.get('tipoContacto')?.touched && contactosForm.get('tipoContacto')?.invalid"
+        class="text-red-500 text-sm mt-1"
+      >
+        Selecciona un tipo de contacto
+      </div>
+    </div>
+
+    <!-- Calle -->
+    <div>
+      <label class="block text-gray-700 font-semibold mb-1">Calle</label>
+      <input
+        type="text"
+        formControlName="calle"
+        placeholder="Ej. Av. Juárez #123"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div
+        *ngIf="contactosForm.get('calle')?.touched && contactosForm.get('calle')?.invalid"
+        class="text-red-500 text-sm mt-1"
+      >
+        Ingresa una calle válida
+      </div>
+    </div>
+
+    <!-- Ciudad -->
+    <div>
+      <label class="block text-gray-700 font-semibold mb-1">Ciudad</label>
+      <input
+        type="text"
+        formControlName="ciudad"
+        placeholder="Ej. Monterrey"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div
+        *ngIf="contactosForm.get('ciudad')?.touched && contactosForm.get('ciudad')?.invalid"
+        class="text-red-500 text-sm mt-1"
+      >
+        Ingresa una ciudad válida
+      </div>
+    </div>
+
+    <!-- Estado -->
+    <div>
+      <label class="block text-gray-700 font-semibold mb-1">Estado</label>
+      <input
+        type="text"
+        formControlName="estado"
+        placeholder="Ej. Nuevo León"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div
+        *ngIf="contactosForm.get('estado')?.touched && contactosForm.get('estado')?.invalid"
+        class="text-red-500 text-sm mt-1"
+      >
+        Ingresa un estado válido
+      </div>
+    </div>
+
+    <!-- Código Postal -->
+    <div>
+      <label class="block text-gray-700 font-semibold mb-1">Código Postal</label>
+      <input
+        type="text"
+        formControlName="codigoPostal"
+        placeholder="Ej. 64000"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div
+        *ngIf="contactosForm.get('codigoPostal')?.touched && contactosForm.get('codigoPostal')?.invalid"
+        class="text-red-500 text-sm mt-1"
+      >
+        Ingresa un código postal válido (5 dígitos)
+      </div>
+    </div>
+
+    <!-- Teléfono -->
+    <div>
+      <label class="block text-gray-700 font-semibold mb-1">Teléfono</label>
+      <input
+        type="text"
+        formControlName="telefono"
+        placeholder="Ej. 8123456789"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div
+        *ngIf="contactosForm.get('telefono')?.touched && contactosForm.get('telefono')?.invalid"
+        class="text-red-500 text-sm mt-1"
+      >
+        Ingresa un teléfono válido (10 dígitos)
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="flex justify-between mt-4">
+      <a
+        routerLink="/contactoPaciente"
+        class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
+      >
+        Cancelar
+      </a>
+
+      <button
+        type="submit"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
+      >
+        Crear Contacto
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,7 +1,7 @@
 export enum TipoContactoPaciente {
-    Emergencia = 0,
-    Familiar = 1,
-    Amigo = 2
+    Emergencia,
+    Familiar,
+    Amigo
 }
 
 export interface ContactoPacienteCreateDTO {

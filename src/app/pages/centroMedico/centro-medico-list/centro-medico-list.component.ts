@@ -10,6 +10,7 @@ import { CentroMedicoService } from '../../../services/centro-medico.service';
   styleUrl: './centro-medico-list.component.css'
 })
 export class CentroMedicoListComponent implements OnInit {
+
   centros: CentroMedicoRead[] = [];
 
   centroMedicoService = inject(CentroMedicoService);
@@ -18,10 +19,18 @@ export class CentroMedicoListComponent implements OnInit {
     this.loadData();
   }
 
-  loadData() : void {
-    this.centroMedicoService.obtenerCentrosMedicos().subscribe( data => {
+  loadData(): void {
+    this.centroMedicoService.obtenerCentrosMedicos().subscribe(data => {
       this.centros = data;
       console.log(this.centros);
     });
+  }
+
+  eliminarCentro(id: number): void {
+    if (confirm('¿Deseas eliminar este centro medico?')) {
+      this.centroMedicoService.eliminarCentroMedico(id).subscribe(() => {
+        this.centros = this.centros.filter(c => c.centroMedicoId !== id);
+      });
+    }
   }
 }

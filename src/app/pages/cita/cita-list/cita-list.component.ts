@@ -10,10 +10,10 @@ import { DatePipe } from '@angular/common';
   templateUrl: './cita-list.component.html',
   styleUrl: './cita-list.component.css'
 })
-export class CitaListComponent implements OnInit{
-  
+export class CitaListComponent implements OnInit {
 
-  citas : CitaReadDTO [] = [];
+
+  citas: CitaReadDTO[] = [];
 
   citaService = inject(CitaService);
 
@@ -21,11 +21,18 @@ export class CitaListComponent implements OnInit{
     this.loadData();
   }
 
-  loadData(): void{
-    this.citaService.obtenerCitas().subscribe ( data => {
+  loadData(): void {
+    this.citaService.obtenerCitas().subscribe(data => {
       this.citas = data;
       console.log(this.citas);
     })
   }
 
+  eliminarCita(id: number): void {
+    if (confirm('¿Deseas eliminar esta cita?')) {
+      this.citaService.eliminarCita(id).subscribe(() => {
+        this.citas = this.citas.filter(c => c.citaId !== id);
+      });
+    }
+  }
 }

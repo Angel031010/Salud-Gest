@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angula
 import { RouterModule, RouterLink, Router } from '@angular/router';
 import { CitaReadDTO } from '../../../interfaces/cita.model';
 import { PacienteReadDTO } from '../../../interfaces/paciente.model';
-import { MedicoReadDTO } from '../../../interfaces/medico.model';
+import { medicoReadDTO } from '../../../interfaces/medico.model';
 import { CitaService } from '../../../services/cita.service';
 import { PacienteService } from '../../../services/paciente.service';
 import { MedicoService } from '../../../services/medico.service';
@@ -21,7 +21,7 @@ export class CitaCreateComponent {
   citaForm!: FormGroup;
   citas: CitaReadDTO[] = [];
   pacientes: PacienteReadDTO[] = [];
-  medicos: MedicoReadDTO[] = [];
+  medicos: medicoReadDTO[] = [];
   centrosMedicos: CentroMedicoRead[] = [];
 
   constructor(
@@ -89,5 +89,7 @@ export class CitaCreateComponent {
       }
     });
   }
+
+
 
 }

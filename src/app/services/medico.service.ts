@@ -12,6 +12,6 @@ export class MedicoService {
   constructor(private http : HttpClient) { }
 
   public obtenerMedicos() : Observable <medicoReadDTO[]>{
-    return this.http.get<medicoReadDTO[]>(environment.api.especialidades)
+    return this.http.get<medicoReadDTO[]>(environment.api.medico)
   }
 }
